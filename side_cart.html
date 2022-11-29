@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href = "./side_cart.css">
+
+</head>
+<body style="background-color: black">
+    <div id="side_cart">
+        <div id="header_div">
+            <div id="contains_cart_title"><h1>CART</h1></div>
+            <div id="contains_cross_sign">
+                <svg id="x_mark_icon" xmlns="http://www.w3.org/20/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+        </div>
+
+        <div id="contians_cart_items_divs">
+
+            <div id="cart_item_div">
+                <div id="image_containing_div">
+                    <img id="product_image" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313319958_RLLZ_1_180x.jpg?v=1669454445"/>
+                </div>
+                <div class="product_description_and_plus_minus_containing_div">
+                    <h3 class="product_name font_style_and_weight">Valentino Rockstud Caged 100 Grainy Leather Pump</h3>
+                    <h4 class="product_color_and_size font_style_and_weight">Pink</h4>
+                    <div class="contains_plus_minus_and_price_divs">
+                        <div class="keeps_plus_minus_box_on_left">
+                            <div class="plus_minus_and_quantity_box">
+                                <div class="minus_sign_box">
+                                    <svg class="minus_sign_icon"  viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+                                </div>
+                                <div class="quantity_box"><h3 class="product_quantity">3</h3></div>
+                                <div class="plus_sign_box">
+                                    <svg class="plus_sign_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keeps_price_tag_on_right">
+                            <h3 class=" font_style_and_weight" id="product_price">$598.99</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="cart_item_div">
+                <div id="image_containing_div">
+                    <img id="product_image" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313319958_RLLZ_1_180x.jpg?v=1669454445"/>
+                </div>
+                <div class="product_description_and_plus_minus_containing_div">
+                    <h3 class="product_name font_style_and_weight">Valentino Rockstud Caged 100 Grainy Leather Pump</h3>
+                    <h4 class="product_color_and_size font_style_and_weight">Pink</h4>
+                    <div class="contains_plus_minus_and_price_divs">
+                        <div class="keeps_plus_minus_box_on_left">
+                            <div class="plus_minus_and_quantity_box">
+                                <div class="minus_sign_box">
+                                    <svg class="minus_sign_icon"  viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+                                </div>
+                                <div class="quantity_box"><h3 class="product_quantity">3</h3></div>
+                                <div class="plus_sign_box">
+                                    <svg class="plus_sign_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="keeps_price_tag_on_right">
+                            <h3 class=" font_style_and_weight" id="product_price">$598.99</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom_part_containing_text">
+
+            <button id="checkout_button">CHECKOUT</button>
+            <p id="shipping_text">Shipping, taxes, and discounts codes calculated at checkout.</p>
+            <div id="subtotal_box">
+                <div id="subtotal_text_box"><p style="margin-top:0px; margin-bottom:0px;">SUBTOTAL</p></div>
+                <div id="subtotal_amount_box"><p style="margin-top:0px; margin-bottom:0px;" >$1,155.99</p></div>
+            </div>
+
+            <div id="discount_box">
+                <div id="discount_text_box"><p>DISCOUNT</p></div>
+                <div id="discount_amount_with_some_text_box">
+                    <p>Extra 20% Off Cyber Monday Sitewide Sale</p>
+                    <p id="discount_amount_p_tag">(-$288.99)</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
