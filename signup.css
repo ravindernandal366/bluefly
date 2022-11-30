@@ -1,0 +1,126 @@
+ 
+
+ body {
+   margin: auto;
+   margin-left: 40px;
+   margin-right: 40px;
+ }
+
+
+ #container {
+   width: 32%;
+   margin: auto;
+   margin-top: 80px;
+ }
+
+ #container>h1 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  font-family: "Trirong", serif;
+}
+
+ #form {
+   width: 100%;
+   margin: auto;
+ }
+
+ #form>input {
+   border: 1px solid rgb(219, 219, 219);
+   width: 98%;
+   margin: auto;
+   height: 43px;
+   margin-top: 10px;
+   margin-bottom: 25px;
+ }
+
+ #form>#button {
+   border: 1px solid rgb(219, 219, 219);
+   background-color: black;
+   width: 99%;
+   margin: auto;
+   height: 43px;
+   margin-top: 10px;
+   margin-bottom: 25px;
+   color: white;
+   cursor: pointer;
+ }
+
+ #form>label {
+   font-size: 12px;
+   color: #000000;
+   cursor: pointer;
+ }
+
+ #form>p {
+   text-align: center;
+ }
+
+ /* 
+ #signup {
+   margin-top: 80px;
+   border: 2px solid green;
+ }
+
+ #container {
+  border: 2px solid red;
+   display: grid;
+   width: 36%;
+   margin: auto;
+   margin-top: 40px;
+   padding: 20px;
+   text-align: center;
+ }
+
+ #container>form>input {
+   width: 100%;
+   margin: auto;
+   margin: 10px 0px;
+   height: 30px;
+   border: 1px solid rgb(219, 219, 219);
+   font-size: 15px;
+   padding: 10px 10px 10px 20px;
+ }
+
+ #container>h1 {
+   text-align: center;
+   font-size: 38px;
+ }
+
+ #container>p {
+   width: 100%;
+   font-size: 16px;
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 50px;
+ }
+
+ #container>form>#button {
+   width: 100%;
+   margin: auto;
+   height: 50px;
+   margin-top: 20px;
+   padding: 6px;
+   font-size: 15px;
+   color: white;
+   background-color: black;
+   border: none;
+   text-align: center;
+ }
+
+ #button{
+  cursor: pointer;
+ }
+
+ #container>#form>p {
+   width: 100%;
+   font-size: 16px;
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 40px;
+ }
+
+ #container{
+  box-sizing: border-box;
+ } */
