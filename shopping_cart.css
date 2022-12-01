@@ -1,0 +1,131 @@
+#contains_label_line_of_cart_items_box{
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.cart_item{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.image_and_description{
+    display: flex;
+    width: 60%;
+}
+
+.contains_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price_div{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contains_plus_minus_and_quantity_box_of_item{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total_product_price_div{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#price_section_label_div{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#quantity_section_label_div{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#total_section_label_divf{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.plus_minus_and_quantity_box{
+    display:flex;
+    height:27px;
+    width:81px;
+    border: 1px solid #e8e8e1;
+}
+
+.minus_sign_box{
+    width:27px;
+    height:27px;
+}
+
+.minus_sign_icon{
+    width:15px;
+    height: 15px;
+    margin-left: 6px;
+    margin-top: 6px;
+}
+
+.quantity_box{
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #e8e8e1;
+    border-right: 1px solid #e8e8e1;
+}
+
+.plus_sign_box{
+    width: 27px;
+    height: 27px;
+}
+
+.plus_sign_icon{
+    width:15px;
+    height: 15px;
+    margin-left: 6px;
+    margin-top: 6px;
+}
+
+#empty_div{
+    width: 60%;
+}
+
+#for_keeping_subtotal_text_and_price_on_right{
+    display: flex;
+    width: 90%;
+    margin:auto;
+}
+
+#contains_subtotal_text_and_amount{
+    width: 40%;
+    display:flex;
+}
+
+#subtotal_text_div{
+    width:50%;
+    display: flex;
+    justify-content: center;
+}
+
+#contains_subtotal_amount{
+    width: 50;
+    display: flex;
+    justify-content: center;
+}
