@@ -6,70 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./shopping_cart.css"/>
+    <script src="./shopping_cart.js">
+
+    </script>
 </head>
 <body>
-    <h1 style="text-align:center; font-size: 43px;">CART</h1>
+    <h1 style="text-align:center; font-size: 43px; font-family: Tiemann,serif;">CART</h1>
 
     <div id="contains_label_line_of_cart_items_box">
         <div style="width:60%;">
 
         </div>
         <div id="price_section_label_div" >
-            <p>Price</p>
+            <p style="font-size: 16px;">Price</p>
         </div>
 
         <div id="quantity_section_label_div">
-            <p>Quantity</p>
+            <p style="font-size: 16px;">Quantity</p>
         </div>
 
         <div id="total_section_label_div">
-            <p>Total</p>
+            <p style="font-size: 16px;">Total</p>
         </div>
     </div>
 
-    <div id="contains_cart_items">
-        <div class="cart_item">
-            <div class="image_and_description">
-                <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/670213-r2791-1000__1_180x.jpg?v=1669733165"/>
-                <div class="contains_description">
-                    <p class="product_name">MCQ ALEXANDER MCQUEEN UNISEX-ADULT SNEAKERS</p>
-                    <p class="product_size_and_color">45 / Black</p>
-                    <button class="remove_button" onclick="remove_item('${id}')">Remove</button>
-                </div>
-            </div>
-            <div class="price_div">
-                <p class="product_price">$159.00</p>
-            </div>
-            <div class="contains_plus_minus_and_quantity_box_of_item">
-                <div class="plus_minus_and_quantity_box">
-                    <div class="minus_sign_box" onclick="decrease_quantity('${id}')">
-                        <svg class="minus_sign_icon"   viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
-                    </div>
-                    <div class="quantity_box"><h3 id="${product_quantity_id}" class="product_quantity">4</h3></div>
-                    <div class="plus_sign_box" onclick="increase_quantity('${id}')">
-                        <svg class="plus_sign_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-                    </div>
-                </div>
-            </div>
-            <div class="total_product_price_div">
-                <p class="total_product_price">$123.99</p>
-            </div>
-        </div>
+    <div id="contains_cart_items_divs">
+
     </div>
 
     <div id="for_keeping_subtotal_text_and_price_on_right">
         <div id="empty_div">
 
         </div>
-        <div id="contains_subtotal_text_and_amount">
-            <div id="subtotal_text_div">
-                <p>SUBTOTAL</p>
-            </div>
-            <div id="contains_subtotal_amount">
-                <p>$123.99</p>
-            </div>
+        <div id="contains_subtotal_text">
+            <p style="font-weight: 800;">SUBTOTAL</p>
+        </div>
+        <div id="contains_subtotal_amount">
+            <p id="subtotal_amount">$243</p>
         </div>
     </div>
+
+    <p style="text-align:end;">Shipping, taxes, and discounts codes calculated at checkout.</p>
+
+    <button id="checkout_button" >CHECKOUT</button>
 
 </body>
 </html>

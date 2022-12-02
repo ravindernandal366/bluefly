@@ -10,11 +10,14 @@
 
 </head>
 <body style="background-color: black">
+
+    <button style="visibility: visible;" onclick="bring_side_cart()">side cart</button>
+
     <div id="side_cart">
         <div id="header_div">
             <div id="contains_cart_title"><h1>CART</h1></div>
             <div id="contains_cross_sign">
-                <svg id="x_mark_icon" xmlns="http://www.w3.org/20/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                <svg onclick="hide_cart()" id="x_mark_icon" xmlns="http://www.w3.org/20/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
             </div>
         </div>
 
@@ -27,19 +30,13 @@
         <div class="bottom_part_containing_text">
 
             <button id="checkout_button">CHECKOUT</button>
-            <p id="shipping_text">Shipping, taxes, and discounts codes calculated at checkout.</p>
+            <p id="shipping_text" class="font_style_and_weight">Shipping, taxes, and discounts codes calculated at checkout.</p>
             <div id="subtotal_box">
-                <div id="subtotal_text_box"><p style="margin-top:0px; margin-bottom:0px;">SUBTOTAL</p></div>
-                <div id="subtotal_amount_box"><p id="subtotal_amount_p_tag" style="margin-top:0px; margin-bottom:0px;" >$1,155.99</p></div>
+                <div id="subtotal_text_box"><p class="font_style_and_weight" style="margin-top:0px; margin-bottom:0px; font-size: 15px;">SUBTOTAL</p></div>
+                <div id="subtotal_amount_box"><p class="font_style_and_weight" id="subtotal_amount_p_tag" style="margin-top:0px; margin-bottom:0px; font-size: 15px;" >$1,155.99</p></div>
             </div>
 
-            <div id="discount_box">
-                <div id="discount_text_box"><p>DISCOUNT</p></div>
-                <div id="discount_amount_with_some_text_box">
-                    <p>Extra 20% Off Cyber Monday Sitewide Sale</p>
-                    <p id="discount_amount_p_tag">(-$288.99)</p>
-                </div>
-            </div>
+            
 
         </div>
 

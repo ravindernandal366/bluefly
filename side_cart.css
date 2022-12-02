@@ -2,12 +2,20 @@
     width:400px;
     margin:auto;
     height: 100vh;
-    margin-top: -8px;
+    margin-top: 0px;
     background-color: white;
     position: fixed;
     top:0px;
-    right: 0px;
+    right: -400px;
+    transition: 1s;
 }
+
+*{
+    transition: 1s;
+    visibility: collapse;
+}
+
+
 
 #header_div{
     display: flex;
@@ -40,7 +48,7 @@
     background-color: white;
     width:90%;
     margin:auto;
-    height: 45vh;
+    height: 0vh;
     overflow:scroll;
     overflow-x: hidden;
     padding-top: 10px;
@@ -85,11 +93,11 @@
 
 .product_name{
     margin-top: 0px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .product_color_and_size{
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .contains_plus_minus_and_price_divs{
@@ -131,8 +139,9 @@
 }
 
 .font_style_and_weight{
-    font-weight: 400;
-    font-family: futura sans-serif;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .minus_sign_icon{
@@ -163,7 +172,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 
 #subtotal_box{
@@ -195,4 +204,10 @@
 #discount_amount_with_some_text_box{
     width: 60%;
     text-align:right;
+}
+
+#shipping_text{
+    font-size: 13.6px;
+    opacity: .8;
+    margin-bottom: 0;
 }

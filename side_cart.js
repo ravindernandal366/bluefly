@@ -3,7 +3,8 @@
 
 
 var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
-display_items(cart_items);
+
+var first_time = true;
 
 function display_items(cart_items){
     var index = 0;
@@ -58,13 +59,9 @@ function display_items(cart_items){
 
     });
 
-    var total_price_after_discount = (total_price/100)*80;
-    var total_discount = (total_price/100)*20;
 
-    localStorage.setItem("total_price", total_price_after_discount + "");
-    localStorage.setItem("total_discount_price", total_discount + "");
-    document.getElementById("subtotal_amount_p_tag").innerText = "$" + total_price_after_discount;
-    document.getElementById("discount_amount_p_tag").innerText = "$" + total_discount;
+    localStorage.setItem("total_price", total_price + "");
+    document.getElementById("subtotal_amount_p_tag").innerText = "$" + total_price;
 
 }
 
@@ -129,25 +126,39 @@ function decrease_quantity(id){
 function change_total_amount(price, code){
     if(code === 0){
         var current_total_price = Number(localStorage.getItem("total_price"));
-        var current_total_discount_price = Number(localStorage.getItem("total_discount_price"));
-        var new_reduction_to_price_tag = (Number(price)/100)*80;
-        var new_reduction_to_discount_tag = (Number(price)/100)*20;
+        var new_reduction_to_price_tag = Number(price);
         var new_total_price = current_total_price - new_reduction_to_price_tag;
-        var new_total_discount_price = current_total_discount_price - new_reduction_to_discount_tag;
+        new_total_price = new_total_price.toFixed(2);
         document.getElementById("subtotal_amount_p_tag").innerText = "$" + new_total_price;
-        document.getElementById("discount_amount_p_tag").innerText = "$" + new_total_discount_price;
         localStorage.setItem("total_price", new_total_price + "");
-        localStorage.setItem("total_discount_price", new_total_discount_price + "");
     } else{
         var current_total_price = Number(localStorage.getItem("total_price"));
-        var current_total_discount_price = Number(localStorage.getItem("total_discount_price"));
-        var new_addition_to_price_tag = (Number(price)/100)*80;
-        var new_addition_to_discount_tag = (Number(price)/100)*20;
+        var new_addition_to_price_tag = Number(price);
         var new_total_price = current_total_price + new_addition_to_price_tag;
-        var new_total_discount_price = current_total_discount_price + new_addition_to_discount_tag;
+        new_total_price = new_total_price.toFixed(2);
         document.getElementById("subtotal_amount_p_tag").innerText = "$" + new_total_price;
-        document.getElementById("discount_amount_p_tag").innerText = "$" + new_total_discount_price;
         localStorage.setItem("total_price", new_total_price + "");
-        localStorage.setItem("total_discount_price", new_total_discount_price + "");
     }
+}
+
+function bring_side_cart(){
+    if(first_time){
+        display_items(cart_items);
+        first_time = false;
+    } else{
+
+    }
+    document.getElementById("side_cart").style.right = "0px";
+    document.getElementById("contains_cart_items_divs").style.height = "53vh";
+    let myElements = document.querySelectorAll("*");
+
+    for (let i = 0; i < myElements.length; i++) {
+        myElements[i].style.visibility = "visible";
+    }
+
+}
+
+function hide_cart(){
+    document.getElementById("side_cart").style.right = "-400px";
+    document.getElementById("contains_cart_items_divs").style.height = "0vh";
 }
