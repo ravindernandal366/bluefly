@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+width: 80%;
+margin: auto;
+text-align: center;
+margin-top: 50px;
+text-decoration: underline;
+border: 3px solid black;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+margin-bottom: 15px;
+}
+
+.main img{
+    width: 260px;
+    height: 40px;
+    margin-bottom: 16px;
+}
+.main h1{
+    font-family: sans-serif;
+    background-color: rgb(45, 156, 253);
+   color: white;
+   text-decoration: underline;
+}
+.main h3{
+    color: black;
+    text-decoration: underline;
+}
+
+input{
+    padding: 10px;
+    margin-top: 16px;
+    width: 135px;
+}
+
+#cardNumber{
+    padding: 10px;
+    width: 300px;
+}
+
+#pay{
+    background-color: black;
+    margin-top: 32px;
+    width: 325px;
+    padding: 10px;
+    color: white;
+}
+#pay:hover{
+    cursor: pointer;
+    background-color: dodgerblue;
+}
+.main p{
+    margin-top: 32px;
+}
+
+@media all and (min-width: 0px) and (max-width: 404px) 
+{
+
+    #cardNumber{
+        width: 250px;
+    }
+
+    input{
+        padding: 10px;
+        margin-top: 16px;
+        width: 99px;
+    }
+
+    #pay{
+        background-color: black;
+        margin-top: 32px;
+        width: 275px;
+        padding: 10px;
+        color: white;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img id="logo" src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/BLUEFLY-LOGO-11-20.png?200716" alt="logo"/>
+        <h1>Card-Payment</h1>
+        <h3>Please fill card details <span>:- card number , exp date , cvv</span></h3>
+
+       
+        <input id="cardNumber" type="number" placeholder="Enter card number"/><br>
+        
+        <input id="expYear" type="date" placeholder="Exp"/>
+        <input id="cvv" type="number" placeholder="cvv"/><br>
+
+        <button id="pay">PAY $99</button>
+
+        <p>Note: after payment your order will placed successfull and you will redirected to your home page</p>
+        <p>Dummy Card Details: Card Number = 123456789 and exp date = 2024-05-02 and cvv = 000</p>
+    </div>
+</body>
+</html>
+<script>
+    var cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+
+var total = [];
+cartData.map(function(ele){
+    var str =  ele.pPrice.replace('$', '');
+    total.push(str);
+});
+
+var sum =0;
+for(var i =0;i<total.length;i++)
+{
+    sum+=parseInt(total[i]);
+}
+
+
+document.getElementById("pay").innerText="Pay $"+sum;
+
+document.getElementById("pay").addEventListener("click",function(){
+    var cardNumber = document.getElementById("cardNumber").value;
+    var expYear = document.getElementById("expYear").value;
+    var cvv = document.getElementById("cvv").value;
+     
+    if(cardNumber===""){
+        alert("please fill card number");
+    }
+    else if(expYear===""){
+        alert("enter exp date");
+    }
+    else if(cvv===""){
+        alert("enter cvv");
+    }
+    else{
+
+        if(cardNumber==="123456789" && expYear==="2024-05-02" && cvv==="000"){
+            storeOrderHistory();
+            alert("Thanku For Shopping")
+           window.location.href="index.html";
+        }
+        else{
+            alert("wrong details");
+        }
+    }
+
+});
+
+var arr = JSON.parse(localStorage.getItem("orderHistory")) || [];
+function storeOrderHistory(){
+
+    cartData.map(function(elem){
+        var obj ={
+            oName:elem.pName,
+            oPrice:elem.pPrice,
+            oImg:elem.pImg
+        }
+
+        arr.push(obj);
+    });
+
+    localStorage.setItem("orderHistory",JSON.stringify(arr));
+
+
+    localStorage.removeItem("cartData");
+}
+
+</script>
