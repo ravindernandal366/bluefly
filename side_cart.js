@@ -2,11 +2,12 @@
 
 
 
-var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
+
 
 var first_time = true;
 
-function display_items(cart_items){
+function display_items(){
+    var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
     var index = 0;
     var total_price = 0;
     cart_items.forEach(element => {
@@ -19,8 +20,8 @@ function display_items(cart_items){
         }
         index++;
         
-        var product_quantity_id = "product_quantity" + id;
-        var product_price_id = "product_price" + id;
+        var product_quantity_side_cart__id = "product_quantity_side_cart_" + id;
+        var product_price_side_cart_id = "product_price_side_cart" + id;
         var name = element.name;
         var price = "$" + element.price;
         var color = element.color;
@@ -31,42 +32,43 @@ function display_items(cart_items){
         
         total_price += Number(quantity)*Number(element.price);
 
-        this_item.innerHTML = `<div class="image_containing_div">
-            <img class="product_image" src="${image_url}"/>
+        this_item.innerHTML = `<div class="image_containing_div_side_cart">
+            <img class="product_image_side_cart" src="${image_url}"/>
         </div>
-        <div class="product_description_and_plus_minus_containing_div">
-            <h3 class="product_name font_style_and_weight">${name}</h3>
-            <h4 class="product_color_and_size font_style_and_weight"> ${color_and_size} </h4>
-            <div class="contains_plus_minus_and_price_divs">
-                <div class="keeps_plus_minus_box_on_left">
-                    <div class="plus_minus_and_quantity_box">
-                        <div class="minus_sign_box" onclick="decrease_quantity('${id}')">
-                            <svg class="minus_sign_icon"   viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+        <div class="product_description_and_plus_minus_containing_div_side_cart">
+            <h3 class="product_name_side_cart font_style_and_weight">${name}</h3>
+            <h4 class="product_color_and_size_side_cart font_style_and_weight"> ${color_and_size} </h4>
+            <div class="contains_plus_minus_and_price_divs_side_cart">
+                <div class="keeps_plus_minus_box_on_left_side_cart">
+                    <div class="plus_minus_and_quantity_box_side_cart">
+                        <div class="minus_sign_box_side_cart" onclick="decrease_quantity_side_cart('${id}')">
+                            <svg class="minus_sign_icon_side_cart"   viewBox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
                         </div>
-                        <div class="quantity_box"><h3 id="${product_quantity_id}" class="product_quantity">${quantity}</h3></div>
-                        <div class="plus_sign_box" onclick="increase_quantity('${id}')">
-                            <svg class="plus_sign_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                        <div class="quantity_box_side_cart"><h3 id="${product_quantity_side_cart__id}" class="product_quantity_side_cart">${quantity}</h3></div>
+                        <div class="plus_sign_box_side_cart" onclick="increase_quantity_side_cart('${id}')">
+                            <svg class="plus_sign_icon_side_cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                         </div>
                     </div>
                 </div>
-                <div class="keeps_price_tag_on_right">
-                    <h3 class=" font_style_and_weight" id="${product_price_id}">${price}</h3>
+                <div class="keeps_price_tag_on_right_side_cart">
+                    <h3 class=" font_style_and_weight" id="${product_price_side_cart_id}">${price}</h3>
                 </div>
             </div>
         </div>`;
 
-        document.querySelector("#contains_cart_items_divs").append(this_item);
+        document.querySelector("#contains_side_cart_items_divs").append(this_item);
 
     });
 
+    total_price = total_price.toFixed(2);
 
     localStorage.setItem("total_price", total_price + "");
     document.getElementById("subtotal_amount_p_tag").innerText = "$" + total_price;
 
 }
 
-function increase_quantity(id){
-    var current_quantity = Number(document.getElementById("product_quantity" + id).innerText);
+function increase_quantity_side_cart(id){
+    var current_quantity = Number(document.getElementById("product_quantity_side_cart_" + id).innerText);
     var new_quantity = current_quantity + 1;
 
     var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
@@ -74,7 +76,7 @@ function increase_quantity(id){
     for(let a = 0; a<cart_items.length; a++){
         var element = cart_items[a];
         if(element.id === id){
-            change_total_amount(element.price, 1);
+            change_total_amount_side_cart(element.price, 1);
             element.quantity = new_quantity;
             break;
         }
@@ -82,12 +84,12 @@ function increase_quantity(id){
 
     localStorage.setItem("cart_items", JSON.stringify(cart_items));
 
-    document.getElementById("product_quantity" + id).innerText = new_quantity + "";
+    document.getElementById("product_quantity_side_cart_" + id).innerText = new_quantity + "";
 
 }
 
-function decrease_quantity(id){
-    var current_quantity = Number(document.getElementById("product_quantity" + id).innerText);
+function decrease_quantity_side_cart(id){
+    var current_quantity = Number(document.getElementById("product_quantity_side_cart_" + id).innerText);
     var new_quantity = current_quantity - 1;
     var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
 
@@ -95,7 +97,7 @@ function decrease_quantity(id){
         for(let a = 0; a<cart_items.length; a++){
             var element = cart_items[a];
             if(element.id === id){
-                change_total_amount(element.price, 0);
+                change_total_amount_side_cart(element.price, 0);
                 cart_items.splice(a, 1);
                 break;
             }
@@ -106,7 +108,7 @@ function decrease_quantity(id){
         for(let a = 0; a<cart_items.length; a++){
             var element = cart_items[a];
             if(element.id === id){
-                change_total_amount(element.price, 0);
+                change_total_amount_side_cart(element.price, 0);
                 element.quantity = new_quantity;
                 break;
             }
@@ -114,7 +116,7 @@ function decrease_quantity(id){
     
         localStorage.setItem("cart_items", JSON.stringify(cart_items));
     
-        document.getElementById("product_quantity" + id).innerText = new_quantity + "";
+        document.getElementById("product_quantity_side_cart_" + id).innerText = new_quantity + "";
     }
 
     
@@ -123,7 +125,7 @@ function decrease_quantity(id){
 
 }
 
-function change_total_amount(price, code){
+function change_total_amount_side_cart(price, code){
     if(code === 0){
         var current_total_price = Number(localStorage.getItem("total_price"));
         var new_reduction_to_price_tag = Number(price);
@@ -143,22 +145,26 @@ function change_total_amount(price, code){
 
 function bring_side_cart(){
     if(first_time){
-        display_items(cart_items);
+        display_items();
         first_time = false;
     } else{
 
     }
     document.getElementById("side_cart").style.right = "0px";
-    document.getElementById("contains_cart_items_divs").style.height = "53vh";
+    document.getElementById("contains_side_cart_items_divs").style.height = "53vh";
     let myElements = document.querySelectorAll("*");
 
     for (let i = 0; i < myElements.length; i++) {
         myElements[i].style.visibility = "visible";
     }
 
+    //bringing black div to the center
+    document.getElementById("black_div").style.right = "0px";
+
 }
 
 function hide_cart(){
     document.getElementById("side_cart").style.right = "-400px";
-    document.getElementById("contains_cart_items_divs").style.height = "0vh";
+    document.getElementById("contains_side_cart_items_divs").style.height = "0vh";
+    document.getElementById("black_div").style.right = "-100vw";
 }

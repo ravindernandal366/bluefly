@@ -9,9 +9,13 @@
     <link rel="stylesheet" href = "./side_cart.css">
 
 </head>
-<body style="background-color: black">
+<body>
 
     <button style="visibility: visible;" onclick="bring_side_cart()">side cart</button>
+
+    <div onclick="hide_cart()" id="black_div">
+
+    </div>
 
     <div id="side_cart">
         <div id="header_div">
@@ -21,7 +25,7 @@
             </div>
         </div>
 
-        <div id="contains_cart_items_divs">
+        <div id="contains_side_cart_items_divs">
 
            
 
@@ -29,11 +33,11 @@
 
         <div class="bottom_part_containing_text">
 
-            <button id="checkout_button">CHECKOUT</button>
+            <button id="checkout_side_cart_button">CHECKOUT</button>
             <p id="shipping_text" class="font_style_and_weight">Shipping, taxes, and discounts codes calculated at checkout.</p>
-            <div id="subtotal_box">
+            <div id="subtotal_side_cart_box">
                 <div id="subtotal_text_box"><p class="font_style_and_weight" style="margin-top:0px; margin-bottom:0px; font-size: 15px;">SUBTOTAL</p></div>
-                <div id="subtotal_amount_box"><p class="font_style_and_weight" id="subtotal_amount_p_tag" style="margin-top:0px; margin-bottom:0px; font-size: 15px;" >$1,155.99</p></div>
+                <div id="subtotal_amount_side_cart_box"><p class="font_style_and_weight" id="subtotal_amount_p_tag" style="margin-top:0px; margin-bottom:0px; font-size: 15px;" >$1,155.99</p></div>
             </div>
 
             

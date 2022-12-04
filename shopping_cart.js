@@ -1,8 +1,8 @@
 
-var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
 
-function display_cart_items(cart_items){
+function display_cart_items(){
     var total_price = 0;
+    var cart_items = JSON.parse(localStorage.getItem("cart_items")) || [];
     cart_items.forEach(element => {
         var name = element.name;
         var id = element.id;
@@ -30,7 +30,7 @@ function display_cart_items(cart_items){
                 </div>
                     </div>
                     <div class="price_div">
-                        <p class="product_price">${price}</p>
+                        <p class="product_price">$${price}</p>
                     </div>
                     <div class="contains_plus_minus_and_quantity_box_of_item">
                         <div class="plus_minus_and_quantity_box">
@@ -44,7 +44,7 @@ function display_cart_items(cart_items){
                         </div>
                     </div>
                         <div class="total_product_price_div">
-                            <p class="total_product_price" id="total_single_product_price${id}">${total_single_product_price}</p>
+                            <p class="total_product_price" id="total_single_product_price${id}">$${total_single_product_price}</p>
                         </div>`;
 
         document.querySelector("#contains_cart_items_divs").append(this_item);
@@ -56,7 +56,7 @@ function display_cart_items(cart_items){
 }
 
 window.onload = function () {
-    display_cart_items(cart_items);
+    display_cart_items();
     document.getElementById("contains_cart_items_divs").style.height = "fit-content";
 
 };
