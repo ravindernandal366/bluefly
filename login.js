@@ -194,7 +194,7 @@ function loginfun() {
     });
     if (validuser) {
         alert("Login successfully");
-        location.href = "homepage.html";
+        location.href = "Landingsunaina.html";
     } else if (usernotallowed) {
         alert("Incorrect email or password.");
         document.getElementById("email").value = "";

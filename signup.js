@@ -188,6 +188,8 @@ function create() {
             console.log("an");
             flag = false;
             alert("Account already exists")
+            location.href = "login.html"
+
         }
     });
     if (flag) {
